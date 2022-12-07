@@ -1,4 +1,4 @@
- <?php
+<?php
 
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/*Route::get('/pizzas', function () {
+    //Content-Type: text/html
+//    return view('pizzas');
+//    return 'Eslam';
+    //Content-Type: application/json
+    return ['name' => 'Eslam', 'work' => 'android develper']; // => it's an array but laravel turn into json
+});*/
+
+Route::get('/pizzas', function () {
+    //Content-Type: text/html
+    return view('pizzas');
+});
+
+
+
