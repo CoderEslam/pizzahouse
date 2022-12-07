@@ -26,11 +26,21 @@ Route::get('/', function () {
 
 Route::get('/pizzas', function () {
 
+    $pizzas = [['type' => 'tyjr5je754j',
+        'base' => 'chees crust',
+        'price' => 10],
+        ['type' => 'sfbdfabdg',
+            'base' => 'chees crust',
+            'price' => 10],
+        ['type' => 'nbrgnrnfh',
+            'base' => 'chees crust',
+            'price' => 10]];
+
     $data = ['type' => 'hawailan',
         'base' => 'chees crust',
         'price' => 10]; // get data from database
     //Content-Type: text/html
-    return view('pizzas', $data);
+    return view('pizzas', ['pizzas' => $pizzas]);
 });
 
 

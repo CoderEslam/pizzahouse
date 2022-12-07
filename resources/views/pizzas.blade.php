@@ -406,25 +406,24 @@
             Pizza House <br/>
             The North's Best
         </h1>
-        <p>
-            {{$type}} - {{$base}} - {{$price}}
-        </p>
-        @if($price>10)
-            <p>this pizza is expensive</p>
-        @elseif($price<10)
-            <p>this pizza is cheap</p>
-        @else
-            <p>this pizza is normally price</p>
-        @endif
+        {{--        <p>--}}
+        {{--        {{$type}} - {{$base}} - {{$price}}--}}
+        {{--        </p>--}}
+        @for($i = 0;$i < count($pizzas);$i++)
+            <p> {{$pizzas[$i]['type']}} - {{$pizzas[$i]['base']}} - {{$pizzas[$i]['price']}}</p>
+        @endfor
 
-        @unless($base!='chees crust')
-            <p>you don't have a cheesy crust</p>
-        @endunless
-
-        @php
-            $name = 'eslam';
-            echo $name
-        @endphp
+        @foreach($pizzas as $pizza)
+            <div style="color: chartreuse">
+                {{$loop->index }}  {{$pizza['type']}} - {{$pizza['base']}} - {{$pizza['price']}}
+                @if($loop->first)
+                    <span>- first in the loop</span>
+                @endif
+                @if($loop->last)
+                    <span>- last in the loop</span>
+                @endif
+            </div>
+        @endforeach
 
     </div>
 </div>
