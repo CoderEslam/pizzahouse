@@ -25,8 +25,12 @@ Route::get('/', function () {
 });*/
 
 Route::get('/pizzas', function () {
+
+    $data = ['type' => 'hawailan',
+        'base' => 'chees crust',
+        'price' => 10]; // get data from database
     //Content-Type: text/html
-    return view('pizzas');
+    return view('pizzas', $data);
 });
 
 

@@ -401,9 +401,14 @@
 </head>
 <body class="antialiased">
 <div class="content">
-    <div class="title m-b-md">
-        Pizza House <br/>
-        The North's Best
+    <div style="color: darkblue ;text-align: center">
+        <h1>
+            Pizza House <br/>
+            The North's Best
+        </h1>
+        <p>
+            {{$type}} - {{$base}} - {{$price}}
+        </p>
     </div>
 </div>
 </body>
