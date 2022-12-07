@@ -409,6 +409,23 @@
         <p>
             {{$type}} - {{$base}} - {{$price}}
         </p>
+        @if($price>10)
+            <p>this pizza is expensive</p>
+        @elseif($price<10)
+            <p>this pizza is cheap</p>
+        @else
+            <p>this pizza is normally price</p>
+        @endif
+
+        @unless($base!='chees crust')
+            <p>you don't have a cheesy crust</p>
+        @endunless
+
+        @php
+            $name = 'eslam';
+            echo $name
+        @endphp
+
     </div>
 </div>
 </body>
