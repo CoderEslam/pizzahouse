@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/*
+ * to create a database
+ * create database pizzahouse;
+ */
+
 class PizzaController extends Controller
 {
     //
