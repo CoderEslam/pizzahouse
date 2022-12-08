@@ -48,6 +48,11 @@ Route::get('/pizzas', function () {
 //    return view('pizzas', ['pizzas' => $pizzas, 'name' => $name, 'age' => $age]);
     return view('pizzas', ['pizzas' => $pizzas, 'name' => Request('name'), 'age' => request('age')]);
 });
+Route::get('/details/{id}', function ($id) {
+
+
+    return view('details', ['id' => $id]);
+});
 
 
 
