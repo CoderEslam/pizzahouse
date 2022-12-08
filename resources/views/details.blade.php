@@ -3,10 +3,9 @@
 @section('content')
     <div style="height: 100vh;">
         <div class="title">
-            <p>{{$id}}</p>
             <h1>
                 Pizza House <br/>
-                The North's Best
+                The North's Best {{$id}}
             </h1>
         </div>
     </div>
