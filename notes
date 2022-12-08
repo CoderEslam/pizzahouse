@@ -1,1 +1,10 @@
 to creat a database to mysql => create database pizzahouse; in terminal but before that connect env of you computer to => C:\xampp\mysql\bin
+
+Migration  => it's mean create our table programmatically defile structure of our table by laravel
+
+ to create table in database
+php artisan make:migration create_pizza_table
+
+to migrate all table in database
+php artisan migrate
+
