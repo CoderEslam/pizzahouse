@@ -4,7 +4,7 @@
     <div style="height: 100vh;">
         <div class="title">
             <h1>
-                Pizza House <br/>
+                {{$name}} <br/>
                 The North's Best {{$id}}
             </h1>
         </div>
