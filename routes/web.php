@@ -1,5 +1,6 @@
 <?php
 
+use http\Env\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,11 +37,16 @@ Route::get('/pizzas', function () {
             'base' => 'chees crust',
             'price' => 10]];
 
+    //http://localhost/pizzahouse/public/pizzas?name=Eslam
+    $name = request('name'); // for sending parameter in link
+    http://localhost/pizzahouse/public/pizzas?name=Eslam&age=25
+    $age = Request('age'); // for sending parameter in link
     $data = ['type' => 'hawailan',
         'base' => 'chees crust',
         'price' => 10]; // get data from database
     //Content-Type: text/html
-    return view('pizzas', ['pizzas' => $pizzas]);
+//    return view('pizzas', ['pizzas' => $pizzas, 'name' => $name, 'age' => $age]);
+    return view('pizzas', ['pizzas' => $pizzas, 'name' => Request('name'), 'age' => request('age')]);
 });
 
 
