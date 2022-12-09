@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pizza;
 use Illuminate\Http\Request;
 
 /*
@@ -15,7 +16,12 @@ class PizzaController extends Controller
 
     public function index()
     {
-        $pizzas = [['type' => 'tyjr5je754j',
+
+//        $pizzas = Pizza::all(); /* to get all data from db no order*/
+
+        $pizzas = Pizza::orderBy('price')->get(); /* to get all data from db by order price*/
+//        $pizzas = Pizza::orderBy('type','desc')->get(); /* to get all data from db by order price*/
+        /*$pizzas = [['type' => 'tyjr5je754j',
             'base' => 'chees crust',
             'price' => 30],
             ['type' => 'sfbdfabdg',
@@ -23,7 +29,7 @@ class PizzaController extends Controller
                 'price' => 56],
             ['type' => 'nbrgnrnfh',
                 'base' => 'chees crust',
-                'price' => 88]];
+                'price' => 88]];*/
 
         //http://localhost/pizzahouse/public/pizzas?name=Eslam
         $name = request('name'); // for sending parameter in link
