@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 // Eloquent Model => the model is equivalent in table in database
+
+/**
+ * @method static findOrFail($id)
+ */
 class Pizza extends Model
 {
     use HasFactory;

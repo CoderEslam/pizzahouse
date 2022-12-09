@@ -14,6 +14,7 @@
                 Pizza House <br/>
                 The North's Best
             </h1>
+            <a href="/pizzahouse/public/pizzas/create">Order a pizza</a>
         </div>
     </div>
 @endsection
