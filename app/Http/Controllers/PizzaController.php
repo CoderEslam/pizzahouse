@@ -19,8 +19,10 @@ class PizzaController extends Controller
 
 //        $pizzas = Pizza::all(); /* to get all data from db no order*/
 
-        $pizzas = Pizza::orderBy('price')->get(); /* to get all data from db by order price*/
+//        $pizzas = Pizza::orderBy('price')->get(); /* to get all data from db by order price*/
 //        $pizzas = Pizza::orderBy('type','desc')->get(); /* to get all data from db by order price*/
+//        $pizzas = Pizza::where('type', 'Ahawalian 1')->get(); /* to get data from db by condition*/
+        $pizzas = Pizza::latest()->get(); /* to retrieve data from db in date order it's mean by time*/
         /*$pizzas = [['type' => 'tyjr5je754j',
             'base' => 'chees crust',
             'price' => 30],
