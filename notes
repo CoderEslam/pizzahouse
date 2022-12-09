@@ -141,3 +141,7 @@ we you add an entity in table you have many option ?!
 2 - add an entity in file .php and do -> migrate:rollback and -> php artisan migrate
 3 - the best wey and safe we write -> php artisan make:migration add_price_to_pizza_table  and add entity in new file -> we write php artisan migrate
 
+
+Naming Conventions
+
+

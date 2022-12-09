@@ -43,11 +43,16 @@ class PizzaController extends Controller
         //Content-Type: text/html
 //    return view('pizzas', ['pizzas' => $pizzas, 'name' => $name, 'age' => $age]);
         // query parameters
-        return view('pizzas', ['pizzas' => $pizzas, 'name' => Request('name'), 'age' => request('age')]);
+        return view('pizzas.index', ['pizzas' => $pizzas, 'name' => Request('name'), 'age' => request('age')]);
     }
 
     public function show($id, $name)
     {
-        return view('details', ['id' => $id, 'name' => $name]);
+        return view('pizzas.show', ['id' => $id, 'name' => $name]);
+    }
+
+    public function create()
+    {
+        return view('pizzas.create');
     }
 }
