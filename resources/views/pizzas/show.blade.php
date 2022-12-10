@@ -20,7 +20,7 @@
             <button>Complete order</button>
         </form>
 
-        <a href="/pizzahouse/public/pizzas"> <- back to all pizzas</a>
+        <a href="/pizzas"> <- back to all pizzas</a>
 
 
     </div>

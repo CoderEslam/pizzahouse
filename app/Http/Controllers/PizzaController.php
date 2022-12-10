@@ -54,6 +54,13 @@ class PizzaController extends Controller
         return view('pizzas.show', ['pizzas' => $pizzas]);
     }
 
+    public function showAll()
+    {
+//        $pizzas = Pizza::find($id); /* getting element by id*/
+        $pizzas = Pizza::all(); /* getting element by id - findOrFail() is better because if not exist return 404 */
+        return view('pizzas.showall', ['pizzas' => $pizzas]);
+    }
+
     public function create()
     {
         return view('pizzas.create');

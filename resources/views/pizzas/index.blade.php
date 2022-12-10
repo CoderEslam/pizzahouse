@@ -2,15 +2,25 @@
 
 @section('content')
     <div style="height: 100vh;">
+        @if (Route::has('login'))
+            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                @auth
+                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                @else
+                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}"
+                           class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                    @endif
+                @endauth
+            </div>
+        @endif
+
         <div class="title">
             <h1>Pizza House <br/>The North's Best</h1>
-            @for($i = 0;$i < count($pizzas);$i++)
-                <div>
-                    <img src="img/pizza.jpg" style="height: 100px ; width: 100px">
-                    <p><a style="font-size:18px" href="pizzas/show/{{$pizzas[$i]['id']}}}">{{$pizzas[$i]['name']}}</a>
-                    </p>
-                </div>
-            @endfor
+
+            <h6> order pizza <a href="/pizzas/create"> -> </a></h6>
         </div>
     </div>
 @endsection
