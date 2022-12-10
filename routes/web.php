@@ -45,6 +45,8 @@ Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy']);
     3 - npm install
     4 - npm run dev
  * */
-Auth::routes();
+Auth::routes([
+    'register' => false /* and this refer to home.app.php => Route::has('register') will equal false*/
+]); /* Disabling Registration */
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
