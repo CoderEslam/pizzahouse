@@ -17,6 +17,9 @@ class Pizza extends Model
     // we don't need it because name of class == name of table
 
     protected $table = 'pizza';
+    protected $casts = [
+        'toppings' => 'array' /* to cast toppings to array in db*/
+    ];
 
     protected $fillable = [
 

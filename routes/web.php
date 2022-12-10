@@ -32,3 +32,4 @@ Route::get('/pizzas/show/{id}', [PizzaController::class, 'show']);
 
 Route::post('/pizzas', [PizzaController::class, 'store']);
 
+Route::delete('/pizzas/{id}',[PizzaController::class,'destroy']);

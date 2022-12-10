@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pizza;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 /*
  * to create a database
@@ -70,9 +71,17 @@ class PizzaController extends Controller
         $pizza->name = request('name');  /* -> it's mean set in java*/
         $pizza->type = request('type');
         $pizza->base = request('base');
+        $pizza->toppings = request('toppings');
         $pizza->save();  /*to save data in db and laravel it's know which table save data by model */
         error_log("Model => " . $pizza);
 
         return redirect('/pizzas')->with('message', 'thanks for your order');/* we send a message by key and data by method call with(key, value)*/
+    }
+
+    protected function destroy($id)
+    {
+        $pizzas = Pizza::findOrFail($id);
+        $pizzas->delete();
+        return redirect('/pizzas');
     }
 }
