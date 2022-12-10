@@ -15,6 +15,11 @@ class PizzaController extends Controller
 {
     //
 
+    public function __construct()
+    {
+        $this->middleware('auth')->except('create')->except('index'); /* middleware for all routes in PizzaController */
+    }
+
     public function index()
     {
 

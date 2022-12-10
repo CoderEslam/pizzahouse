@@ -28,7 +28,7 @@ Route::get('/', function () {
     return ['name' => 'Eslam', 'work' => 'android develper']; // => it's an array but laravel turn into json
 });*/
 
-Route::get('/pizzas', [PizzaController::class, 'index']);
+Route::get('/pizzas', [PizzaController::class, 'index'])/*to protect my routes without auth didn't enter*/ ->middleware('auth');
 Route::get('/pizzas/create', [PizzaController::class, 'create']);
 Route::get('/pizzas/show/{id}', [PizzaController::class, 'show']);
 Route::get('/pizzas/showall', [PizzaController::class, 'showall']);
