@@ -14,6 +14,9 @@
                 Pizza House <br/>
                 The North's Best
             </h1>
+            <p>
+                {{session('message')}} {{-- to resive data from redirect() method in PizzaController--}}
+            </p>
             <a href="/pizzas/create">Order a pizza</a>
         </div>
     </div>

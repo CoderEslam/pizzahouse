@@ -60,12 +60,19 @@ class PizzaController extends Controller
 
     public function store()
     {
-        error_log(request('name'));
-        error_log(request('type'));
-        error_log(request('base'));
+//        error_log(request('name'));
+//        error_log(request('type'));
+//        error_log(request('base'));
+
+        $pizza = new Pizza();
 
 
+        $pizza->name = request('name');  /* -> it's mean set in java*/
+        $pizza->type = request('type');
+        $pizza->base = request('base');
+        $pizza->save();  /*to save data in db and laravel it's know which table save data by model */
+        error_log("Model => " . $pizza);
 
-        return redirect('/pizzas');
+        return redirect('/pizzas')->with('message', 'thanks for your order');/* we send a message by key and data by method call with(key, value)*/
     }
 }
