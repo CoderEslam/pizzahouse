@@ -143,5 +143,12 @@ we you add an entity in table you have many option ?!
 
 
 Naming Conventions
+C:\xampp\htdocs\pizzahouse\images\Screenshot 2022-12-10 014812.png
 
+
+Laravel defulte Auth Ui
+    1 - composer require laravel/ui
+    2 - php artisan ui vue --auth
+    3 - npm install
+    4 - npm run dev
 

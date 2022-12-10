@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PizzaController;
 use http\Env\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,4 +34,16 @@ Route::get('/pizzas/show/{id}', [PizzaController::class, 'show']);
 
 Route::post('/pizzas', [PizzaController::class, 'store']);
 
-Route::delete('/pizzas/{id}',[PizzaController::class,'destroy']);
+Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy']);
+
+
+/*
+ * Laravel defulte Auth Ui
+    1 - composer require laravel/ui
+    2 - php artisan ui vue --auth
+    3 - npm install
+    4 - npm run dev
+ * */
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');

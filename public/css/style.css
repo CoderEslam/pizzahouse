@@ -387,4 +387,5 @@ video {
     border-bottom: 1px solid #000000;
     padding: 12px 0;
     color: #5e2195;
+    display: inline;
 }
